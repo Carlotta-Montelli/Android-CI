@@ -40,7 +40,7 @@ chmod +x build-llvm.py
     --vendor-string "$LLVM_NAME" 2>&1 | tee build.log
 
 # Check if the final clang binary exists or not.
-[ ! -f install/bin/clang-1* ] && {
+[ ! -f install/bin/clang-2* ] && {
 	err "Building LLVM failed ! Kindly check errors !!"
 	err "build.log" "Error Log"
 	exit 1
@@ -68,7 +68,7 @@ for bin in $(find install -mindepth 2 -maxdepth 3 -type f -exec file {} \; | gre
 done
 
 # Git config
-wget https://raw.githubusercontent.com/KanariaAlt/Android-CI/main/Common/Git-Config.sh
+wget https://raw.githubusercontent.com/Carlotta-Montelli/Android-CI/main/Common/Git-Config.sh
 bash Git-Config.sh
 
 # Release Info
