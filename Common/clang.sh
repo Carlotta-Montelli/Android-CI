@@ -83,7 +83,7 @@ clang_version="$(install/bin/clang --version | head -n1 | cut -d' ' -f4)"
 
 # Push to GitHub
 # Update Git repository
-git clone "https://Carlotta-Montelli:$GH_TOKEN@github.com/Carlotta-Montelli/Carlotta_Clang" rel_repo
+git clone "https://Carlotta-Montelli:$GH_TOKEN@github.com/Carlotta-Montelli/carlotta_clang-20" rel_repo
 pushd rel_repo || exit
 rm -fr ./*
 cp -r ../install/* .
@@ -107,6 +107,6 @@ git commit -asm "Carlotta: Update to $rel_date build
 LLVM commit: $llvm_commit_url
 Clang Version: $clang_version
 Binutils version: $binutils_ver
-Builder commit: https://github.com/Carlotta-Montelli/Carlotta_Clang/commit/$builder_commit"
-git push https://Carlotta-Montelli:$GH_TOKEN@github.com/Carlotta-Montelli/Carlotta_Clang HEAD:20
+Builder commit: https://github.com/Carlotta-Montelli/carlotta-clang-20/commit/$builder_commit"
+git push
 popd || exit
