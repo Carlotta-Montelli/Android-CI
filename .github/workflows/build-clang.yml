@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build TC
         run: |
-          wget https://raw.githubusercontent.com/Carlotta-Montelli/Android-CI/main/Common/clang.sh
+          wget https://raw.githubusercontent.com/Carlotta-Montelli/Android-CI/20/Common/clang.sh
           bash clang.sh
 
         env:
