@@ -36,7 +36,7 @@ chmod +x build-llvm.py
     --quiet-cmake \
     --shallow-clone \
     --targets ARM AArch64 X86 \
-    --ref "release/21.x" \
+    --ref "release/20.x" \
     --vendor-string "$LLVM_NAME" 2>&1 | tee build.log
 
 # Check if the final clang binary exists or not.
@@ -88,7 +88,7 @@ pushd rel_repo || exit
 rm -fr ./*
 cp -r ../install/* .
 git lfs install
-git lfs track "clang-21"
+git lfs track "clang-20"
 git lfs track "opt"
 git lfs track "clang-linker-wrapper"
 git lfs track "clang-repl"
@@ -99,7 +99,7 @@ git lfs track "libLTO.so"
 git lfs track "bugpoint"
 git lfs track "clang-scan-deps"
 git lfs track "lld"
-git lfs track "libclang.so.21.1.0"
+git lfs track "libclang.so.20.1.8"
 git lfs track "libclang-cpp.so.21.1"
 git checkout README.md # keep this as it's not part of the toolchain itself
 git add .
