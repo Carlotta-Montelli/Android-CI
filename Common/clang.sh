@@ -108,5 +108,5 @@ LLVM commit: $llvm_commit_url
 Clang Version: $clang_version
 Binutils version: $binutils_ver
 Builder commit: https://github.com/Carlotta-Montelli/Carlotta_Clang/commit/$builder_commit"
-git push 
+git push origin HEAD:20
 popd || exit
