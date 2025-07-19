@@ -78,12 +78,12 @@ short_llvm_commit="$(cut -c-8 <<<"$llvm_commit")"
 popd || exit
 
 llvm_commit_url="https://github.com/llvm/llvm-project/commit/$short_llvm_commit"
-binutils_ver="$(ls | grep "^binutils-" | sed "s/binutils-//g")"
+binutils_ver="$(ls | grep "^binutils-2" | sed "s/binutils-//g")"
 clang_version="$(install/bin/clang --version | head -n1 | cut -d' ' -f4)"
 
 # Push to GitHub
 # Update Git repository
-git clone "https://Carlotta-Montelli:$GH_TOKEN@github.com/Carlotta-Montelli/carlotta_clang-20" rel_repo
+git clone "https://Carlotta-Montelli:$GH_TOKEN@github.com/Carlotta-Montelli/carlotta-clang-20" rel_repo
 pushd rel_repo || exit
 rm -fr ./*
 cp -r ../install/* .
@@ -100,7 +100,7 @@ git lfs track "bugpoint"
 git lfs track "clang-scan-deps"
 git lfs track "lld"
 git lfs track "libclang.so.20.1.8"
-git lfs track "libclang-cpp.so.21.1"
+git lfs track "libclang-cpp.so.20.1"
 git checkout README.md # keep this as it's not part of the toolchain itself
 git add .
 git commit -asm "Carlotta: Update to $rel_date build
